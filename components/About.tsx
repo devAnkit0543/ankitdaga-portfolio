@@ -18,7 +18,7 @@ const About = () => {
             hacking together a custom reblog button taught me a lot about HTML &
             CSS! */}
 
-            I am a Software Developer with 3 years of experience in full-stack web development, primarily focusing on the MERN stack (MongoDB, Express.js, React.js, Node.js). I specialize in building modern, responsive web applications using React for the front-end and Node.js for the back-end, with a understanding of MongoDB for efficient data handling
+            I am a Software Developer with 3+ years of experience in full-stack web development, primarily focusing on the MERN stack (MongoDB, Express.js, React.js, Node.js). I specialize in building modern, responsive web applications using React for the front-end and Node.js for the back-end, with a understanding of MongoDB for efficient data handling
           </p>
           <p>
             Throughout my career, I’ve honed my skills in Git and Jira, which have helped me effectively manage projects, collaborate with teams, and ensure smooth development workflows. I have a solid foundation in leveraging React component libraries, such as Ant Design (AntD), to create user-friendly and visually appealing interfaces.,{" "}

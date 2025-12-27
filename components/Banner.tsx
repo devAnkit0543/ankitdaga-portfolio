@@ -30,7 +30,7 @@ const Banner = () => {
         transition={{ duration: 0.5, delay: 0.8 }}
         className="text-base md:max-w-[650px] text-textDark font-medium"
       >
-        with 3 years of hands-on experience specializing in the MERN (MongoDB, Express.js, React.js, and Node.js) stack. i have successfully contributed to building dynamic, high-performance web applications and APIs, focusing on creating efficient, scalable, and user-friendly solutions.{" "}
+        with 3+ years of hands-on experience specializing in the MERN (MongoDB, Express.js, React.js, and Node.js) stack. i have successfully contributed to building dynamic, high-performance web applications and APIs, focusing on creating efficient, scalable, and user-friendly solutions.{" "}
         {/* <a href="https://www.noormohammad.live/" target="_blank">
           {" "}
           <span className="text-textGreen inline-flex relative cursor-pointer h-7 overflow-x-hidden group">
