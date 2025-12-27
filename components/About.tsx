@@ -94,7 +94,7 @@ const About = () => {
                 src={'/assets/images/ankitd.jpg'}
                 alt="profileImg"
               /> */}
-              <img alt="Ankit Daga - MERN Stack Developer" className="rounded-lg h-full object-cover" src="/assets/images/profile.jpg" loading="lazy" />
+              <img alt="Ankit Daga - MERN Stack Developer" className="rounded-lg h-full object-cover" src="/profile.jpg" loading="lazy" />
               <div className="hidden lgl:inline-block absolute w-full h-80 bg-textGreen/20 rounded-md top-0 left-0 group-hover:bg-transparent duration-300"></div>
             </div>
           </div>
