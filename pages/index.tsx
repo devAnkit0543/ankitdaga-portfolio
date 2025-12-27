@@ -16,19 +16,57 @@ export default function Home() {
     <>
       <Head>
         <title>Ankit Daga | MERN Stack Developer</title>
-        <meta name="description" content="Ankit Daga is a MERN Stack Developer specializing in React, Node.js, MongoDB, and AWS. Explore projects, experience, and contact details on ankitdaga.in." />
+
+        <meta
+          name="description"
+          content="Ankit Daga is a MERN Stack Developer specializing in React, Node.js, MongoDB, and AWS. Explore projects, experience, and contact details on ankitdaga.in."
+        />
+
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.ico" />
         <link rel="canonical" href="https://ankitdaga.in" />
+
+        {/* Open Graph */}
         <meta property="og:title" content="Ankit Daga | MERN Stack Developer" />
-        <meta property="og:description" content="MERN Stack Developer specializing in React, Node.js, MongoDB, and AWS." />
+        <meta
+          property="og:description"
+          content="MERN Stack Developer specializing in React, Node.js, MongoDB, and AWS."
+        />
         <meta property="og:url" content="https://ankitdaga.in" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Ankit Daga" />
+
+        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Ankit Daga | MERN Stack Developer" />
-        <meta name="twitter:description" content="MERN Stack Developer specializing in React, Node.js, MongoDB, and AWS." />
+        <meta
+          name="twitter:title"
+          content="Ankit Daga | MERN Stack Developer"
+        />
+        <meta
+          name="twitter:description"
+          content="MERN Stack Developer specializing in React, Node.js, MongoDB, and AWS."
+        />
+
+        {/* Person Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Ankit Daga",
+              url: "https://ankitdaga.in",
+              image: "https://ankitdaga.in/profile.jpg",
+              sameAs: [
+                "https://www.linkedin.com/in/ankit-daga-427523204//",
+                "https://github.com/devAnkit0543",
+              ],
+              jobTitle: "MERN Stack Developer",
+            }),
+          }}
+        />
       </Head>
+
       <main className="w-full h-screen font-bodyFont bg-bodyColor text-textLight  overflow-x-hidden overflow-y-scroll scrollbar scrollbar-track-textDark/20 scrollbar-thumb-textDark/60">
         <Navbar />
         <div className="w-full h-[88vh] xl:flex items-center gap-20 justify-between">
