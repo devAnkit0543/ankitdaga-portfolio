@@ -5,6 +5,7 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: "class",
   theme: {
     maxWidth: {
       container: "1440px",
@@ -24,11 +25,26 @@ module.exports = {
         xl: "1280px",
       },
       colors: {
-        bodyColor: "#0A192F",
-        textGreen: "#64ffda",
-        textLight: "#ccd6f6",
-        textDark: "#8892b0",
-        hoverColor: "rgba(100,255,218,0.1)",
+        bodyColor: {
+          DEFAULT: "#0A192F",
+          light: "#F5F5F5",
+        },
+        textGreen: {
+          DEFAULT: "#64ffda",
+          light: "#10b981",
+        },
+        textLight: {
+          DEFAULT: "#ccd6f6",
+          light: "#1f2937",
+        },
+        textDark: {
+          DEFAULT: "#8892b0",
+          light: "#4b5563",
+        },
+        hoverColor: {
+          DEFAULT: "rgba(100,255,218,0.1)",
+          light: "rgba(16,185,129,0.1)",
+        },
       },
       fontFamily: {
         bodyFont: ["Montserrat", "sans-serif"],
@@ -36,6 +52,7 @@ module.exports = {
       },
       boxShadow: {
         navbarShadow: " 0 10px 30px -10px rgba(2,12,27,0.7)",
+        navbarShadowLight: " 0 10px 30px -10px rgba(0,0,0,0.1)",
       },
     },
   },

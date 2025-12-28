@@ -1,5 +1,9 @@
 import { motion } from "framer-motion";
+import { useTheme } from "@/contexts/ThemeContext";
+
 const Banner = () => {
+  const { theme } = useTheme();
+
   return (
     <section
       id="home"
@@ -9,7 +13,8 @@ const Banner = () => {
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.6 }}
-        className="text-lg font-titleFont tracking-wide text-textGreen"
+        className={`text-lg font-titleFont tracking-wide ${theme === "dark" ? "text-textGreen" : "text-textGreen-light"
+          }`}
       >
         Hi, my name is
       </motion.h3>
@@ -17,10 +22,12 @@ const Banner = () => {
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.7 }}
-        className="text-4xl lgl:text-6xl font-titleFont font-semibold flex flex-col"
+        className={`text-4xl lgl:text-6xl font-titleFont font-semibold flex flex-col ${theme === "dark" ? "text-textLight" : "text-textLight-light"
+          }`}
       >
         Ankit Daga.
-        <span className="text-textDark mt-2 lgl:mt-4">
+        <span className={`mt-2 lgl:mt-4 ${theme === "dark" ? "text-textDark" : "text-textDark-light"
+          }`}>
           I build things for the web.
         </span>
       </motion.h1>
@@ -28,7 +35,8 @@ const Banner = () => {
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.8 }}
-        className="text-base md:max-w-[650px] text-textDark font-medium"
+        className={`text-base md:max-w-[650px] font-medium ${theme === "dark" ? "text-textDark" : "text-textDark-light"
+          }`}
       >
         with 3+ years of hands-on experience specializing in the MERN (MongoDB, Express.js, React.js, and Node.js) stack. i have successfully contributed to building dynamic, high-performance web applications and APIs, focusing on creating efficient, scalable, and user-friendly solutions.{" "}
         {/* <a href="https://www.noormohammad.live/" target="_blank">

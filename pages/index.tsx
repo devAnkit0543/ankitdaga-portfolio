@@ -10,8 +10,10 @@ import RightSide from "@/components/RightSide";
 import Head from "next/head";
 import { motion } from "framer-motion";
 import Archive from "@/components/Archive";
+import { useTheme } from "@/contexts/ThemeContext";
 
 export default function Home() {
+  const { theme } = useTheme();
   return (
     <>
       <Head>
@@ -67,7 +69,10 @@ export default function Home() {
         />
       </Head>
 
-      <main className="w-full h-screen font-bodyFont bg-bodyColor text-textLight  overflow-x-hidden overflow-y-scroll scrollbar scrollbar-track-textDark/20 scrollbar-thumb-textDark/60">
+      <main className={`w-full h-screen font-bodyFont overflow-x-hidden overflow-y-scroll scrollbar transition-colors duration-300 ${theme === "dark"
+        ? "bg-bodyColor text-textLight scrollbar-track-textDark/20 scrollbar-thumb-textDark/60"
+        : "bg-bodyColor-light text-textLight-light scrollbar-track-textDark-light/20 scrollbar-thumb-textDark-light/60"
+        }`}>
         <Navbar />
         <div className="w-full h-[88vh] xl:flex items-center gap-20 justify-between">
           <motion.div
