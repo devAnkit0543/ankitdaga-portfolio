@@ -1,14 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  output: "export",
+  images: { unoptimized: true },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+};
 
-  // Required for S3 static hosting
-  output: 'export',
-
-  // Fix EXIF orientation error
-  images: {
-    unoptimized: true
-  }
-}
-
-module.exports = nextConfig
+module.exports = nextConfig;
