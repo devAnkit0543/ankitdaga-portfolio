@@ -179,7 +179,7 @@ const Navbar = () => {
               <Separator className={isDark ? "bg-white/10" : "bg-gray-200"} />
 
               <div className="flex flex-col gap-4">
-                <a href="/assets/Ankit Daga CV .pdf" target="_blank">
+                <a href="/assets/Ankit_Daga_CV.pdf" target="_blank">
                   <Button variant="glow" className={`w-full ${isDark ? "border-textGreen text-textGreen" : "border-textGreen-light text-textGreen-light"}`}>
                     Download Resume
                   </Button>
