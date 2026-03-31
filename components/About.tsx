@@ -2,11 +2,29 @@ import { motion } from "framer-motion";
 import { useTheme } from "@/contexts/ThemeContext";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import { BookOpen } from "lucide-react";
 
-const skills = [
-  "JavaScript", "TypeScript", "React.js", "Node.js",
-  "MongoDB", "Express.js", "Tailwind CSS", "Ant Design",
-  "Git", "Jira", "AWS", "REST APIs",
+const skillCategories = [
+  {
+    title: "Languages",
+    skills: ["TypeScript", "JavaScript", "HTML5", "CSS"],
+  },
+  {
+    title: "Frameworks & Libraries",
+    skills: ["React.js", "Next.js", "Node.js", "Express.js", "Ant Design"],
+  },
+  {
+    title: "Database & Caching",
+    skills: ["MongoDB", "MS SQL Server", "Redis"],
+  },
+  {
+    title: "Security & Auth",
+    skills: ["JWT", "RBAC", "2FA", "OAuth"],
+  },
+  {
+    title: "Infrastructure & Tools",
+    skills: ["AWS (EC2, S3, IAM, CloudFront)", "Git", "Jira", "Axios"],
+  },
 ];
 
 const About = () => {
@@ -42,63 +60,53 @@ const About = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="flex-1 flex flex-col gap-5"
+          className="flex-1 flex flex-col gap-6"
         >
           <p className={`text-base leading-relaxed ${isDark ? "text-textDark" : "text-textDark-light"}`}>
-            I am a <span className={isDark ? "text-textGreen font-medium" : "text-textGreen-light font-medium"}>Software Developer with 3+ years of experience</span> in full-stack web development, primarily focusing on the MERN stack (MongoDB, Express.js, React.js, Node.js).
+            I am a <span className={isDark ? "text-textGreen font-medium" : "text-textGreen-light font-medium"}>MERN Stack Developer with 3+ years of experience</span> building scalable web applications and RESTful APIs using React, Next.js, Node.js, Express, MongoDB, and MSSQL.
           </p>
           <p className={`text-base leading-relaxed ${isDark ? "text-textDark" : "text-textDark-light"}`}>
-            Throughout my career, I've honed my skills in <span className={isDark ? "text-textLight font-medium" : "text-textLight-light font-medium"}>Git, Jira,</span> and leveraged component libraries like <span className={isDark ? "text-textLight font-medium" : "text-textLight-light font-medium"}>Ant Design</span> to create user-friendly and visually appealing interfaces.
+            I have strong expertise in both <span className={isDark ? "text-textLight font-medium" : "text-textLight-light font-medium"}>frontend and backend development</span>, implementing secure authentication systems (JWT, RBAC, 2FA), and executing performance optimizations in production environments. I thrive in dynamic, Agile environments where I can tackle critical production issues and improve application architecture.
           </p>
-          <p className={`text-base leading-relaxed ${isDark ? "text-textDark" : "text-textDark-light"}`}>
-            I thrive in dynamic environments and am committed to delivering high-quality software that meets both user and business needs — whether working independently or in a team.
-          </p>
-
-          {/* Skills Grid */}
-          <div className="mt-4">
-            <p className={`text-sm font-monoFont mb-4 ${isDark ? "text-textGreen" : "text-textGreen-light"}`}>
-              // Technologies I work with
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {skills.map((skill, i) => (
-                <motion.div
-                  key={skill}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: i * 0.05 }}
-                >
-                  <Badge
-                    variant="glow"
-                    className={`px-3 py-1.5 text-xs font-monoFont cursor-default transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg ${
-                      isDark
-                        ? "border-textGreen/30 bg-textGreen/5 text-textGreen hover:bg-textGreen/15"
-                        : "border-textGreen-light/30 bg-textGreen-light/5 text-textGreen-light hover:bg-textGreen-light/15"
-                    }`}
-                  >
-                    {skill}
+          
+          {/* Education Section */}
+          <div className="mt-2">
+            <h3 className={`flex items-center gap-2 font-titleFont font-semibold text-lg mb-4 ${isDark ? "text-textLight" : "text-textLight-light"}`}>
+              <BookOpen className={`w-5 h-5 ${isDark ? "text-textGreen" : "text-textGreen-light"}`} />
+              Education
+            </h3>
+            <div className={`p-4 rounded-xl border ${isDark ? "border-white/10 bg-white/5" : "border-gray-200 bg-gray-50"}`}>
+              <div className="flex justify-between items-start flex-wrap gap-2">
+                <div>
+                  <h4 className={`font-bold ${isDark ? "text-textLight" : "text-textLight-light"}`}>Master of Computer Application (MCA)</h4>
+                  <p className={`text-sm mt-1 ${isDark ? "text-textDark" : "text-textDark-light"}`}>Rajasthan Technical University</p>
+                </div>
+                <div className="text-right">
+                  <Badge variant="glow" className={isDark ? "" : "border-textGreen-light/50 bg-textGreen-light/10 text-textGreen-light"}>
+                    2020 - 2022
                   </Badge>
-                </motion.div>
-              ))}
+                  <p className={`text-xs mt-2 font-monoFont ${isDark ? "text-textDark" : "text-textDark-light"}`}>Jaipur, India</p>
+                </div>
+              </div>
             </div>
           </div>
+
         </motion.div>
 
-        {/* Right - Profile Image */}
+        {/* Right - Skills & Profile Image */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="w-full lgl:w-[300px] shrink-0"
+          className="w-full lgl:w-[400px] shrink-0 flex flex-col gap-8"
         >
-          <div className="relative group">
-            {/* Glow ring */}
+          {/* Image card */}
+          <div className="relative group mx-auto w-full max-w-[300px] lgl:max-w-full">
             <div className={`absolute inset-0 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 ${
               isDark ? "bg-textGreen" : "bg-textGreen-light"
             }`} />
-
-            {/* Image card */}
+            
             <Card className={`relative overflow-hidden rounded-2xl border transition-all duration-500 group-hover:-translate-y-2 ${
               isDark
                 ? "border-textGreen/20 bg-[#0d1a2d] group-hover:border-textGreen/50 group-hover:shadow-[0_20px_60px_rgba(100,255,218,0.15)]"
@@ -107,29 +115,49 @@ const About = () => {
               <div className="relative overflow-hidden">
                 <img
                   alt="Ankit Daga - MERN Stack Developer"
-                  className="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-auto aspect-square object-cover transition-transform duration-500 group-hover:scale-105"
                   src="/profile.jpg"
                   loading="lazy"
                 />
-                {/* Overlay */}
                 <div className={`absolute inset-0 transition-opacity duration-500 group-hover:opacity-0 ${
                   isDark ? "bg-textGreen/10" : "bg-textGreen-light/10"
                 }`} />
               </div>
-
-              <CardContent className="p-4">
-                <div className={`flex items-center gap-2 text-xs font-monoFont ${isDark ? "text-textDark" : "text-textDark-light"}`}>
-                  <span className={`w-1.5 h-1.5 rounded-full animate-pulse ${isDark ? "bg-textGreen" : "bg-textGreen-light"}`} />
-                  Based in India · Open to Remote
-                </div>
-              </CardContent>
             </Card>
-
-            {/* Corner accent */}
+            
             <div className={`absolute -bottom-3 -right-3 w-full h-full rounded-2xl border-2 -z-10 transition-all duration-500 group-hover:-translate-x-1 group-hover:-translate-y-1 ${
               isDark ? "border-textGreen/20" : "border-textGreen-light/20"
             }`} />
           </div>
+
+          {/* Categorized Skills */}
+          <div className="flex flex-col gap-5 mt-4">
+            <h3 className={`font-titleFont font-semibold text-lg flex items-center gap-2 ${isDark ? "text-textLight" : "text-textLight-light"}`}>
+              Technical Expertise
+            </h3>
+            {skillCategories.map((cat, i) => (
+              <div key={i} className="flex flex-col gap-2">
+                <p className={`text-xs font-monoFont tracking-wide uppercase ${isDark ? "text-textGreen" : "text-textGreen-light"}`}>
+                  {cat.title}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {cat.skills.map(skill => (
+                    <span 
+                      key={skill}
+                      className={`text-xs px-2.5 py-1 rounded-md transition-colors ${
+                        isDark 
+                          ? "bg-white/5 text-textDark border border-white/10 hover:border-textGreen/30 hover:text-textGreen" 
+                          : "bg-gray-100 text-gray-600 border border-gray-200 hover:border-textGreen-light/30 hover:text-textGreen-light"
+                      }`}
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
         </motion.div>
       </div>
     </section>

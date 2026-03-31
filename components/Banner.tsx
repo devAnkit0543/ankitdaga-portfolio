@@ -125,7 +125,7 @@ const Banner = () => {
                 Say Hello
               </Button>
             </a>
-            <a href="/assets/Ankit Daga CV .pdf" target="_blank">
+            <a href="/assets/Ankit_Daga_CV.pdf" target="_blank">
               <Button
                 variant="glow"
                 size="lg"

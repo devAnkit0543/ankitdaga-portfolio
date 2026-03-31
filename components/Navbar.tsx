@@ -1,6 +1,5 @@
-import { useRef, useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { HiOutlineSun, HiOutlineMoon } from "react-icons/hi";
 import { SlSocialLinkedin, SlSocialFacebook, SlSocialInstagram } from "react-icons/sl";
 import { Menu } from "lucide-react";
@@ -13,12 +12,11 @@ const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#project" },
   { label: "Contact", href: "#contact" },
 ];
 
 const Navbar = () => {
-  const ref = useRef<string | any>("");
-  const [scrolled, setScrolled] = useState(false);
   const { theme, toggleTheme } = useTheme();
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
@@ -101,7 +99,7 @@ const Navbar = () => {
             transition={{ delay: 0.4 }}
             className="flex items-center gap-3"
           >
-            <a href="/assets/Ankit Daga CV .pdf" target="_blank">
+            <a href="/assets/Ankit_Daga_CV.pdf" target="_blank">
               <Button
                 variant="glow"
                 size="sm"

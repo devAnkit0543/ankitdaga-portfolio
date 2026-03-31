@@ -1,206 +1,126 @@
-import Image from "next/image";
-import { AiOutlineYoutube } from "react-icons/ai";
+import { motion } from "framer-motion";
+import { useTheme } from "@/contexts/ThemeContext";
 import { TbBrandGithub } from "react-icons/tb";
-import SectionTitle from "./SectionTitle";
 import { RxOpenInNewWindow } from "react-icons/rx";
+import { Server, Database, Globe } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+
+const projects = [
+  {
+    title: "Multi-Tenant Config-Driven Commerce Platform",
+    description: "Built a multi-tenant, configuration-driven commerce platform enabling dynamic client onboarding and customizable business workflows. Designed scalable RESTful APIs with JWT-based authentication, role-based access control (RBAC), and optimized database queries with pagination to improve performance by 30%. Integrated Razorpay payment gateway for seamless online transactions. Integrated AWS S3 for secure image uploads and implemented CloudFront CDN URLs for optimized media delivery, reducing image load time by 40%.",
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "TypeScript", "AWS (S3, CloudFront)", "Razorpay"],
+    github: "https://github.com/devAnkit0543",
+    link: "", // You can update this with a live link if you have one
+    icon: <Globe className="w-6 h-6" />
+  }
+];
 
 const Projects = () => {
-  return (
-    <section id="project" className="max-w-container mx-auto lgl:px-20 py-24">
-      <SectionTitle title="Some Things I have Built" titleNo="03" />
-      {/* ============ project One Start here ================ */}
-      <div className="w-full flex flex-col items-center justify-center gap-28 mt-10">
-        <div className="flex flex-col xl:flex-row gap-6">
-          <a
-            className="w-full xl:w-1/2 h-auto relative group"
-            href="https://nextamazon.reactbd.com/"
-            target="_blank"
-          >
-            <div>
-              {/* <Image
-                className="w-full h-full object-contain"
-                src={'/assets/images/amazonImg.png'}
-                alt="amazonImg"
-              /> */}
-              <img className="w-full h-full object-contain" src="/assets/images/amazonImg.png" alt="amazonImg" loading="lazy" />
-              <div className="absolute w-full h-full bg-textGreen/10 rounded-lg top-0 left-0 group-hover:bg-transparent duration-300"></div>
-            </div>
-          </a>
-          <div className="w-full xl:w-1/2 flex flex-col gap-6 lgl:justify-between items-end text-right xl:-ml-16 z-10">
-            <div>
-              <p className="font-titleFont text-textGreen text-sm tracking-wide">
-                Featured Project
-              </p>
-              <h3 className="text-2xl font-bold">Amazon Clone 2.0</h3>
-            </div>
-            <p className="bg-[#112240] text-sm md:text-base p-2 md:p-6 rounded-md">
-              An Amazon clone website for visualizing personalized Amazon
-              website. View your products, Add your account with{" "}
-              <span className="text-textGreen">O-auth</span> and then make the
-              purchage using <span className="text-textGreen">stripe</span>.
-            </p>
-            <ul className="text-xs md:text-sm font-titleFont tracking-wide flex gap-2 md:gap-5 justify-between text-textDark">
-              <li>Nextjs</li>
-              <li>Typescript</li>
-              <li>Next-auth</li>
-              <li>Stripe</li>
-              <li>Vercel Deployment</li>
-            </ul>
-            <div className="text-2xl flex gap-4">
-              <a
-                className="hover:text-textGreen duration-300"
-                href="https://github.com/devAnkit0543"
-                target="_blank"
-              >
-                <TbBrandGithub />
-              </a>
-              <a
-                className="hover:text-textGreen duration-300"
-                href="https://youtu.be/WzMtRfzkP-Q"
-                target="_blank"
-              >
-                <AiOutlineYoutube />
-              </a>
-              <a
-                className="hover:text-textGreen duration-300"
-                href="https://nextamazon.reactbd.com/"
-                target="_blank"
-              >
-                <RxOpenInNewWindow />
-              </a>
-            </div>
-          </div>
-        </div>
-        {/* ============ project One End here ================== */}
-        {/* ============ project Two Start here ================ */}
-        <div className="flex flex-col xl:flex-row-reverse gap-6">
-          <a
-            className="w-full xl:w-1/2 h-auto relative group"
-            href="https://www.noormohmmad.com/"
-            target="_blank"
-          >
-            <div>
-              {/* <Image
-                className="w-full h-full object-contain"
-                src={'/assets/images/cyberBlog.png'}
-                alt="cyberBlog"
-              /> */}
-              <img className="w-full h-full object-contain" src="/assets/images/cyberBlog.png" alt="cyberBlog" loading="lazy" />
-              <div className="absolute w-full h-full bg-textGreen/10 rounded-lg top-0 left-0 group-hover:bg-transparent duration-300"></div>
-            </div>
-          </a>
-          <div className="w-full xl:w-1/2 flex flex-col gap-6 justify-between items-end text-right z-10">
-            <div>
-              <p className="font-titleFont text-textGreen text-sm tracking-wide">
-                Featured Project
-              </p>
-              <h3 className="text-2xl font-bold">Cyber Security Blog</h3>
-            </div>
-            <p className="text-sm md:text-base bg-[#112240] p-2 md:p-6 rounded-md xl:-mr-16">
-              A full functional Cyber Security Blog where you can view the
-              latest post and{" "}
-              <span className="text-textGreen">comments on</span> it by passing
-              your ideas besides you can try to add your own{" "}
-              <span className="text-textGreen">post</span> on it by logging on
-              the portal.
-            </p>
-            <ul className="text-xs md:text-sm font-titleFont tracking-wide flex gap-2 md:gap-5 justify-between text-textDark">
-              <li>Nextjs</li>
-              <li>Typescript</li>
-              <li>Next-auth</li>
-              <li>Sanity</li>
-              <li>React Hook Form</li>
-            </ul>
-            <div className="text-2xl flex gap-4">
-              <a
-                className="hover:text-textGreen duration-300"
-                href="https://github.com/devAnkit0543"
-                target="_blank"
-              >
-                <TbBrandGithub />
-              </a>
-              <a
-                className="hover:text-textGreen duration-300"
-                href="https://youtu.be/49Fx963su1I"
-                target="_blank"
-              >
-                <AiOutlineYoutube />
-              </a>
-              <a
-                className="hover:text-textGreen duration-300"
-                href="https://www.noormohmmad.com/"
-                target="_blank"
-              >
-                <RxOpenInNewWindow />
-              </a>
-            </div>
-          </div>
-        </div>
-        {/* ============ project Two End here ================== */}
-        {/* ============ project Three Start here ============== */}
-        <div className="flex flex-col xl:flex-row gap-6">
-          <a
-            className="w-full xl:w-1/2 h-auto relative group"
-            href="https://noorshop.netlify.app/"
-            target="_blank"
-          >
-            <div>
-              {/* <Image
-                className="w-full h-full object-contain"
-                src={'/assets/images/noorShop.png'}
-                alt="noorShop"
-              /> */}
-              <img className="w-full h-full object-contain" src='/assets/images/noorShop.png' alt="noorShop" loading="lazy" />
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
 
-              <div className="absolute w-full h-full bg-textGreen/10 rounded-lg top-0 left-0 group-hover:bg-transparent duration-300"></div>
-            </div>
-          </a>
-          <div className="w-full xl:w-1/2 flex flex-col gap-6 justify-between items-end text-right xl:-ml-16 z-10">
-            <div>
-              <p className="font-titleFont text-textGreen text-sm tracking-wide">
-                Featured Project
-              </p>
-              <h3 className="text-2xl font-bold">Amazon Clone 2.0</h3>
-            </div>
-            <p className="text-sm md:text-base bg-[#112240] p-2 md:p-6 rounded-md">
-              An Amazon clone website for visualizing personalized Amazon
-              website. View your products, Add your account with{" "}
-              <span className="text-textGreen">O-auth</span> and then make the
-              purchage using <span className="text-textGreen">stripe</span>.
-            </p>
-            <ul className="text-xs md:text-sm font-titleFont tracking-wide flex gap-2 md:gap-5 justify-between text-textDark">
-              <li>Nextjs</li>
-              <li>Typescript</li>
-              <li>Next-auth</li>
-              <li>Stripe</li>
-              <li>Vercel Deployment</li>
-            </ul>
-            <div className="text-2xl flex gap-4">
-              <a
-                className="hover:text-textGreen duration-300"
-                href="https://github.com/devAnkit0543"
-                target="_blank"
-              >
-                <TbBrandGithub />
-              </a>
-              <a
-                className="hover:text-textGreen duration-300"
-                href="https://youtu.be/fi0nQc25xAw"
-                target="_blank"
-              >
-                <AiOutlineYoutube />
-              </a>
-              <a
-                className="hover:text-textGreen duration-300"
-                href="https://noorshop.netlify.app/"
-                target="_blank"
-              >
-                <RxOpenInNewWindow />
-              </a>
-            </div>
-          </div>
-        </div>
-        {/* ============ project Three End here ================== */}
+  return (
+    <section id="project" className="relative max-w-containerSmall mx-auto py-24 px-4 mdl:px-10 xl:px-4">
+      
+      {/* Background glow patches */}
+      <div className={`absolute top-40 right-0 w-[400px] h-[400px] rounded-full blur-[100px] opacity-10 pointer-events-none ${isDark ? "bg-textGreen" : "bg-textGreen-light"}`} />
+      <div className={`absolute bottom-20 left-10 w-[300px] h-[300px] rounded-full blur-[100px] opacity-10 pointer-events-none ${isDark ? "bg-blue-600" : "bg-blue-400"}`} />
+
+      {/* Section Title */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="flex items-center gap-4 mb-16"
+      >
+        <span className={`font-monoFont text-sm ${isDark ? "text-textGreen" : "text-textGreen-light"}`}>
+          03.
+        </span>
+        <h2 className={`text-2xl font-bold font-titleFont tracking-tight ${isDark ? "text-textLight" : "text-textLight-light"}`}>
+          Featured Projects
+        </h2>
+        <div className={`flex-1 h-px ${isDark ? "bg-gradient-to-r from-textGreen/30 to-transparent" : "bg-gradient-to-r from-textGreen-light/30 to-transparent"}`} />
+      </motion.div>
+
+      <div className="flex flex-col gap-14">
+        {projects.map((project, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <Card className={`relative overflow-hidden group transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl border ${
+              isDark 
+                ? "bg-[#0d1a2d]/80 border-white/10 hover:border-textGreen/30 backdrop-blur-md" 
+                : "bg-white border-gray-200 hover:border-textGreen-light/30"
+            }`}>
+              {/* Highlight bar effect */}
+              <div className={`absolute top-0 left-0 w-full h-1 scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100 ${
+                isDark ? "bg-textGreen" : "bg-textGreen-light"
+              }`} />
+
+              <CardContent className="p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start">
+                
+                {/* Text Content */}
+                <div className="flex-1">
+                  <div className="flex justify-between items-start mb-6">
+                    <div>
+                      <p className={`font-monoFont text-sm mb-2 ${isDark ? "text-textGreen" : "text-textGreen-light"}`}>
+                        Commercial Implementation
+                      </p>
+                      <h3 className={`text-2xl md:text-3xl font-bold font-titleFont ${isDark ? "text-textLight" : "text-textLight-light"}`}>
+                        {project.title}
+                      </h3>
+                    </div>
+                  </div>
+                  
+                  <div className={`p-5 rounded-lg mb-6 leading-relaxed relative ${
+                    isDark ? "bg-white/5 border border-white/5 text-textDark" : "bg-gray-50 border border-gray-100 text-textDark-light"
+                  }`}>
+                    {project.description}
+                  </div>
+                  
+                  <ul className={`flex flex-wrap text-sm font-monoFont tracking-wide gap-3 md:gap-5 mb-8 ${isDark ? "text-textDark" : "text-textDark-light"}`}>
+                    {project.tech.map((t, i) => (
+                      <li key={i} className="flex items-center gap-2">
+                        <span className={`w-1 h-1 rounded-full ${isDark ? "bg-textGreen" : "bg-textGreen-light"}`} />
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  <div className={`flex items-center gap-6 text-2xl ${isDark ? "text-textLight" : "text-textLight-light"}`}>
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`transition-all duration-300 hover:-translate-y-1 ${isDark ? "hover:text-textGreen" : "hover:text-textGreen-light"}`}
+                      aria-label="GitHub Repository"
+                    >
+                      <TbBrandGithub />
+                    </a>
+                    {project.link && (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`transition-all duration-300 hover:-translate-y-1 ${isDark ? "hover:text-textGreen" : "hover:text-textGreen-light"}`}
+                        aria-label="Live Demo"
+                      >
+                        <RxOpenInNewWindow />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+        ))}
       </div>
     </section>
   );

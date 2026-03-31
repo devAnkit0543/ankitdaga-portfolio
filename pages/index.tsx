@@ -5,6 +5,7 @@ import Experience from "@/components/Experience";
 import Footer from "@/components/Footer";
 import LeftSide from "@/components/LeftSide";
 import Navbar from "@/components/Navbar";
+import Projects from "@/components/Projects";
 import RightSide from "@/components/RightSide";
 import Head from "next/head";
 import { motion } from "framer-motion";
@@ -86,6 +87,7 @@ export default function Home() {
           <Banner />
           <About />
           <Experience />
+          <Projects />
           <Contact />
           <Footer />
         </div>

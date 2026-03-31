@@ -8,18 +8,36 @@ import { Badge } from "@/components/ui/badge";
 
 const experiences = [
   {
-    id: "truworth",
-    company: "Truworth Health Technology",
-    role: "Software Engineer",
-    period: "Nov 2022 – Present",
+    id: "truworth-l2",
+    company: "Truworth Health Technologies",
+    role: "Software Engineer L2",
+    period: "April 2023 - Present",
     type: "Full Time",
     bullets: [
-      "Started as an intern in November 2022, transitioning to a full-time role after three months.",
-      "Developed and maintained admin panels, such as CRM configurations, using React.js, TypeScript, and MongoDB to support internal and external product-based projects.",
-      "Collaborated with cross-functional teams — engineers, designers, and project managers — to ensure smooth project execution and deliver high-quality software solutions.",
-      "Focused on building scalable, maintainable, and high-performance applications that align with business objectives and customer requirements.",
+      "Developed and maintained scalable REST APIs using Node.js and Express.js to support core business workflows in production environment.",
+      "Implemented RBAC, JWT authentication, and 2FA to secure multi-user access across admin and client panels.",
+      "Built and optimized React.js frontend components with efficient API integration and state management.",
+      "Improved API response time by 35% using indexing and query optimization.",
+      "Reduced production bugs by 40% through unit testing & code reviews.",
+      "Resolved critical production issues and performed root cause analysis (RCA), to minimize recurring defects.",
+      "Collaborated with cross-functional teams (Product, QA, Design) in Agile sprints, contributing to sprint planning, feature development, and peer code reviews.",
+      "Contributed to continuous improvements in application architecture, scalability, and code quality standards.",
     ],
-    tech: ["React.js", "TypeScript", "MongoDB", "Node.js", "Ant Design", "Git"],
+    tech: ["Node.js", "Express.js", "React.js", "MongoDB", "JWT", "RBAC", "Agile"],
+  },
+  {
+    id: "truworth-intern",
+    company: "Truworth Health Technologies",
+    role: "Software Developer Intern",
+    period: "November 2022 – March 2023",
+    type: "Internship",
+    bullets: [
+      "Developed frontend features using React.js and Ant Design.",
+      "Built backend routes and middleware using Express.js.",
+      "Integrated REST APIs with frontend using Axios.",
+      "Fixed UI and API-related bugs in production and staging environments.",
+    ],
+    tech: ["React.js", "Ant Design", "Express.js", "Axios", "REST APIs"],
   },
 ];
 
@@ -57,13 +75,13 @@ const Experience = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="md:w-48 flex flex-row md:flex-col overflow-x-auto md:overflow-visible"
+          className="md:w-56 flex flex-row md:flex-col overflow-x-auto md:overflow-visible shrink-0 scrollbarHide"
         >
           {experiences.map((exp, i) => (
             <button
               key={exp.id}
               onClick={() => setActive(i)}
-              className={`relative px-4 py-3 text-sm font-medium text-left whitespace-nowrap md:whitespace-normal transition-all duration-300 border-b-2 md:border-b-0 md:border-l-2 ${
+              className={`relative px-4 py-4 md:py-3 text-sm font-medium text-left whitespace-nowrap transition-all duration-300 border-b-2 md:border-b-0 md:border-l-2 ${
                 active === i
                   ? isDark
                     ? "border-textGreen text-textGreen bg-textGreen/5"
@@ -73,13 +91,14 @@ const Experience = () => {
                   : "border-gray-200 text-textDark-light hover:text-textLight-light hover:bg-gray-50"
               }`}
             >
-              {exp.company.split(" ")[0]}
+              {exp.role} 
+              <span className="block text-xs opacity-70 mt-0.5">{exp.company.split(' ')[0]}</span>
             </button>
           ))}
         </motion.div>
 
         {/* Experience Content */}
-        <div className="flex-1">
+        <div className="flex-1 min-h-[400px]">
           <AnimatePresence mode="wait">
             {experiences.map((exp, i) =>
               active === i ? (
@@ -134,7 +153,7 @@ const Experience = () => {
                       {/* Tech Stack */}
                       <div className={`pt-4 border-t ${isDark ? "border-white/5" : "border-gray-100"}`}>
                         <p className={`text-xs font-monoFont mb-3 ${isDark ? "text-textDark" : "text-textDark-light"}`}>
-                          Tech Stack
+                          Core Technologies
                         </p>
                         <div className="flex flex-wrap gap-2">
                           {exp.tech.map((t) => (

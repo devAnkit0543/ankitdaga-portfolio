@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { useTheme } from "@/contexts/ThemeContext";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Mail, ArrowRight, MessageSquare } from "lucide-react";
-import { SlSocialLinkedin, SlSocialInstagram } from "react-icons/sl";
+import { Mail, ArrowRight, Phone } from "lucide-react";
+import { SlSocialLinkedin } from "react-icons/sl";
 import { TbBrandGithub } from "react-icons/tb";
 
 const Contact = () => {
@@ -28,7 +28,7 @@ const Contact = () => {
         className="relative z-10 flex flex-col items-center text-center"
       >
         <span className={`font-monoFont text-sm mb-3 ${isDark ? "text-textGreen" : "text-textGreen-light"}`}>
-          03. What's Next?
+          04. What's Next?
         </span>
 
         <h2 className={`text-4xl lgl:text-5xl font-bold font-titleFont tracking-tight mb-6 ${isDark ? "text-textLight" : "text-textLight-light"}`}>
@@ -55,7 +55,7 @@ const Contact = () => {
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </a>
-          <a href="https://www.linkedin.com/in/ankit-daga-427523204/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/ankit-daga" target="_blank" rel="noopener noreferrer">
             <Button
               variant="glow"
               size="lg"
@@ -71,12 +71,18 @@ const Contact = () => {
         <div className={`w-full max-w-[400px] h-px mb-10 ${isDark ? "bg-gradient-to-r from-transparent via-white/10 to-transparent" : "bg-gradient-to-r from-transparent via-gray-200 to-transparent"}`} />
 
         {/* Contact cards row */}
-        <div className="grid grid-cols-1 sml:grid-cols-3 gap-4 w-full max-w-[600px]">
+        <div className="grid grid-cols-1 sml:grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-[800px]">
           {[
+            {
+              icon: <Phone className="w-5 h-5" />,
+              label: "Phone",
+              value: "+91-7742770543",
+              href: "tel:+917742770543",
+            },
             {
               icon: <Mail className="w-5 h-5" />,
               label: "Email",
-              value: "ankit.dev0543@gmail.com",
+              value: "ankit.dev0543@gmail",
               href: "mailto:ankit.dev0543@gmail.com",
             },
             {
@@ -89,13 +95,13 @@ const Contact = () => {
               icon: <SlSocialLinkedin className="text-lg" />,
               label: "LinkedIn",
               value: "ankit-daga",
-              href: "https://www.linkedin.com/in/ankit-daga-427523204/",
+              href: "https://www.linkedin.com/in/ankit-daga",
             },
           ].map((item, i) => (
             <motion.a
               key={i}
               href={item.href}
-              target={item.href.startsWith("mailto") ? "_self" : "_blank"}
+              target={item.href.startsWith("mailto") || item.href.startsWith("tel") ? "_self" : "_blank"}
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
