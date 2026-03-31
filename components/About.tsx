@@ -1,105 +1,136 @@
-import SectionTitle from "./SectionTitle";
-import { AiFillThunderbolt } from "react-icons/ai";
+import { motion } from "framer-motion";
+import { useTheme } from "@/contexts/ThemeContext";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
+
+const skills = [
+  "JavaScript", "TypeScript", "React.js", "Node.js",
+  "MongoDB", "Express.js", "Tailwind CSS", "Ant Design",
+  "Git", "Jira", "AWS", "REST APIs",
+];
 
 const About = () => {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+
   return (
     <section
       id="about"
-      className="max-w-containerSmall mx-auto flex flex-col gap-8"
-    // className="max-w-containerSmall mx-auto py-10"
+      className="relative max-w-containerSmall mx-auto py-20 px-4 mdl:px-10 xl:px-4"
     >
-      <SectionTitle title="About Me" titleNo="01" />
-      <div className="flex flex-col lgl:flex-row gap-16">
-        <div className="w-full lgl:w-2/3 text-base text-textDark font-medium flex flex-col gap-4">
-          <p>
-            {/* Hello! My name is Ankit Daga and I enjoy creating things that
-            live on the internet. My interest in web development started back in
-            2012 when I decided to try editing custom Tumblr themes — turns out
-            hacking together a custom reblog button taught me a lot about HTML &
-            CSS! */}
+      {/* Section Title */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="flex items-center gap-4 mb-14"
+      >
+        <span className={`font-monoFont text-sm ${isDark ? "text-textGreen" : "text-textGreen-light"}`}>
+          01.
+        </span>
+        <h2 className={`text-2xl font-bold font-titleFont tracking-tight ${isDark ? "text-textLight" : "text-textLight-light"}`}>
+          About Me
+        </h2>
+        <div className={`flex-1 h-px ${isDark ? "bg-gradient-to-r from-textGreen/30 to-transparent" : "bg-gradient-to-r from-textGreen-light/30 to-transparent"}`} />
+      </motion.div>
 
-            I am a Software Developer with 3+ years of experience in full-stack web development, primarily focusing on the MERN stack (MongoDB, Express.js, React.js, Node.js). I specialize in building modern, responsive web applications using React for the front-end and Node.js for the back-end, with a understanding of MongoDB for efficient data handling
+      <div className="flex flex-col lgl:flex-row gap-14 items-start">
+        {/* Left - Text */}
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="flex-1 flex flex-col gap-5"
+        >
+          <p className={`text-base leading-relaxed ${isDark ? "text-textDark" : "text-textDark-light"}`}>
+            I am a <span className={isDark ? "text-textGreen font-medium" : "text-textGreen-light font-medium"}>Software Developer with 3+ years of experience</span> in full-stack web development, primarily focusing on the MERN stack (MongoDB, Express.js, React.js, Node.js).
           </p>
-          <p>
-            Throughout my career, I’ve honed my skills in Git and Jira, which have helped me effectively manage projects, collaborate with teams, and ensure smooth development workflows. I have a solid foundation in leveraging React component libraries, such as Ant Design (AntD), to create user-friendly and visually appealing interfaces.,{" "}
-            {/* <span className="text-textGreen">
-              a huge corporation, and a student-led design studio.
-            </span>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio rem
-            accusantium fugiat veritatis, quidem repellat{" "}
-            <span className="text-textGreen">
-              ab natus possimus? Sint, accusamus!
-            </span> */}
+          <p className={`text-base leading-relaxed ${isDark ? "text-textDark" : "text-textDark-light"}`}>
+            Throughout my career, I've honed my skills in <span className={isDark ? "text-textLight font-medium" : "text-textLight-light font-medium"}>Git, Jira,</span> and leveraged component libraries like <span className={isDark ? "text-textLight font-medium" : "text-textLight-light font-medium"}>Ant Design</span> to create user-friendly and visually appealing interfaces.
           </p>
-          <p>
-            I’m always eager to learn new technologies and best practices that can help improve the efficiency and quality of my work. Problem-solving and writing clean, maintainable code are my priorities, and I thrive in dynamic environments where I can contribute to meaningful projects. Whether working independently or in a team, I’m committed to delivering high-quality software that meets both user and business needs
+          <p className={`text-base leading-relaxed ${isDark ? "text-textDark" : "text-textDark-light"}`}>
+            I thrive in dynamic environments and am committed to delivering high-quality software that meets both user and business needs — whether working independently or in a team.
           </p>
-          <p>Here are a few technologies I have been working with recently:</p>
-          <ul className="max-w-[450px] text-sm font-titleFont grid grid-cols-2 gap-2 mt-6">
-            <li className="flex items-center gap-2">
-              <span className="text-textGreen">
-                <AiFillThunderbolt />
-              </span>
-              JavaScript
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="text-textGreen">
-                <AiFillThunderbolt />
-              </span>
-              Ant Design Library
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="text-textGreen">
-                <AiFillThunderbolt />
-              </span>
-              React.Js
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="text-textGreen">
-                <AiFillThunderbolt />
-              </span>
-              Node.js
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="text-textGreen">
-                <AiFillThunderbolt />
-              </span>
-              TypeScript
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="text-textGreen">
-                <AiFillThunderbolt />
-              </span>
-              Express.js
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="text-textGreen">
-                <AiFillThunderbolt />
-              </span>
-              MongoDB
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="text-textGreen">
-                <AiFillThunderbolt />
-              </span>
-              Tailwindcss
-            </li>
-          </ul>
-        </div>
-        <div className="w-full lgl:w-1/3 h-80 relative group">
-          <div className="absolute w-full h-80 -left-6 -top-6 rounded-lg ">
-            <div className="w-full h-full relative z-20 flex pl-6 lgl:pl-0">
-              {/* <Image
-                className="rounded-lg h-full object-cover"
-                src={'/assets/images/ankitd.jpg'}
-                alt="profileImg"
-              /> */}
-              <img alt="Ankit Daga - MERN Stack Developer" className="rounded-lg h-full object-cover" src="/profile.jpg" loading="lazy" />
-              <div className="hidden lgl:inline-block absolute w-full h-80 bg-textGreen/20 rounded-md top-0 left-0 group-hover:bg-transparent duration-300"></div>
+
+          {/* Skills Grid */}
+          <div className="mt-4">
+            <p className={`text-sm font-monoFont mb-4 ${isDark ? "text-textGreen" : "text-textGreen-light"}`}>
+              // Technologies I work with
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {skills.map((skill, i) => (
+                <motion.div
+                  key={skill}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: i * 0.05 }}
+                >
+                  <Badge
+                    variant="glow"
+                    className={`px-3 py-1.5 text-xs font-monoFont cursor-default transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg ${
+                      isDark
+                        ? "border-textGreen/30 bg-textGreen/5 text-textGreen hover:bg-textGreen/15"
+                        : "border-textGreen-light/30 bg-textGreen-light/5 text-textGreen-light hover:bg-textGreen-light/15"
+                    }`}
+                  >
+                    {skill}
+                  </Badge>
+                </motion.div>
+              ))}
             </div>
           </div>
-          <div className="hidden lgl:inline-flex w-full h-80 border-2 border-textGreen rounded-md group-hover:-translate-x-2 group-hover:-translate-y-2 transition-transform duration-300"></div>
-        </div>
+        </motion.div>
+
+        {/* Right - Profile Image */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="w-full lgl:w-[300px] shrink-0"
+        >
+          <div className="relative group">
+            {/* Glow ring */}
+            <div className={`absolute inset-0 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 ${
+              isDark ? "bg-textGreen" : "bg-textGreen-light"
+            }`} />
+
+            {/* Image card */}
+            <Card className={`relative overflow-hidden rounded-2xl border transition-all duration-500 group-hover:-translate-y-2 ${
+              isDark
+                ? "border-textGreen/20 bg-[#0d1a2d] group-hover:border-textGreen/50 group-hover:shadow-[0_20px_60px_rgba(100,255,218,0.15)]"
+                : "border-textGreen-light/20 bg-white group-hover:border-textGreen-light/50 group-hover:shadow-xl"
+            }`}>
+              <div className="relative overflow-hidden">
+                <img
+                  alt="Ankit Daga - MERN Stack Developer"
+                  className="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-105"
+                  src="/profile.jpg"
+                  loading="lazy"
+                />
+                {/* Overlay */}
+                <div className={`absolute inset-0 transition-opacity duration-500 group-hover:opacity-0 ${
+                  isDark ? "bg-textGreen/10" : "bg-textGreen-light/10"
+                }`} />
+              </div>
+
+              <CardContent className="p-4">
+                <div className={`flex items-center gap-2 text-xs font-monoFont ${isDark ? "text-textDark" : "text-textDark-light"}`}>
+                  <span className={`w-1.5 h-1.5 rounded-full animate-pulse ${isDark ? "bg-textGreen" : "bg-textGreen-light"}`} />
+                  Based in India · Open to Remote
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Corner accent */}
+            <div className={`absolute -bottom-3 -right-3 w-full h-full rounded-2xl border-2 -z-10 transition-all duration-500 group-hover:-translate-x-1 group-hover:-translate-y-1 ${
+              isDark ? "border-textGreen/20" : "border-textGreen-light/20"
+            }`} />
+          </div>
+        </motion.div>
       </div>
     </section>
   );
